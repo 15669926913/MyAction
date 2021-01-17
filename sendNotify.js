@@ -9,7 +9,7 @@ const $ = new Env();
 // =======================================微信server酱通知设置区域===========================================
 //此处填你申请的SCKEY.
 //注：此处设置github action用户填写到Settings-Secrets里面(Name输入 PUSH_KEY)
-let SCKEY = 'SCU135308Tb0c45cef1e28c6ed4f9ce205b6ab28415fd734c2dd52f';
+let SCKEY = '';
 
 
 // =======================================QQ酷推通知设置区域===========================================
@@ -152,7 +152,7 @@ async function sendNotify(text, desp, params = {}) {
 
 function serverNotify(text, desp, timeout = 2100) {
   return  new Promise(resolve => {
-    // if (SCKEY) {
+     if (SCKEY) {
       //微信server酱推送通知一个\n不会换行，需要两个\n才能换行，故做此替换
       desp = desp.replace(/[\n\r]/g, '\n\n');
       const options = {
@@ -186,10 +186,10 @@ function serverNotify(text, desp, timeout = 2100) {
           }
         })
       }, timeout)
-    // } else {
-    //   console.log('您未提供server酱的SCKEY，取消微信推送消息通知\n');
-    //   resolve()
-    // }
+     } else {
+       console.log('您未提供server酱的SCKEY，取消微信推送消息通知\n');
+       resolve()
+     }
   })
 }
 
