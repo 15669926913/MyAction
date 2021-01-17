@@ -1,0 +1,33 @@
+name: #京东全民开红包 #进店领豆 #取关京东店铺商品 #注销京东会员卡 #京东抽奖机 #东东小窝
+
+
+on:
+  push:
+  gollum:
+  schedule:
+  - cron: "10 0 * * *"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    # 使用 node:10
+    - name: use Node.js 10.x
+      uses: actions/setup-node@v1
+      with:
+        node-version: 10.x
+    # npm install
+    - name: "运行 #京东全民开红包 #进店领豆 #取关京东店铺商品 #注销京东会员卡 #京东抽奖机 #东东小窝"
+      env:
+        JD_COOKIE: ${{ secrets.JD_COOKIE }}
+        PUSH_KEY: ${{ secrets.PUSH_KEY }}
+      run: |
+        npm install
+        node jd_redPacket
+        node jd_shop
+        node jd_unsubscribe
+        node jd_unbind
+        node jd_lotteryMachine
+        node jd_small_home

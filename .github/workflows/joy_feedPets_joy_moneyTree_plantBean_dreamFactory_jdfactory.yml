@@ -1,0 +1,32 @@
+name: # 宠汪汪喂食# 宠汪汪# 摇钱树# 京东种豆得豆# 京喜工厂 #东东工厂
+
+
+on:
+  push:
+  gollum:
+  schedule:
+  - cron: " 3 */1 * * *"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    # 使用 node:10
+    - name: use Node.js 10.x
+      uses: actions/setup-node@v1
+      with:
+        node-version: 10.x
+    # npm install
+    - name: "运行 # 宠汪汪喂食# 宠汪汪# 摇钱树# 京东种豆得豆# 京喜工厂 #东东工厂"
+      env:
+        JD_COOKIE: ${{ secrets.JD_COOKIE }}
+        PUSH_KEY: ${{ secrets.PUSH_KEY }}
+      run: |
+        npm install
+        node jd_joy_feedPets
+        node jd_joy node jd_moneyTree
+        node jd_plantBean
+        node jd_dreamFactory
+        node jd_jdfactory

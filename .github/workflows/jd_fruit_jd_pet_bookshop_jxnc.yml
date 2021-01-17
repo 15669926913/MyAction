@@ -1,0 +1,31 @@
+name: #东东农场 #东东萌宠 #口袋书店 #京喜农场
+
+
+on:
+  push:
+  gollum:
+  schedule:
+  - cron: "0 0,5,9 * * *"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    # 使用 node:10
+    - name: use Node.js 10.x
+      uses: actions/setup-node@v1
+      with:
+        node-version: 10.x
+    # npm install
+    - name: "运行 #东东农场 #东东萌宠 #口袋书店 #京喜农场"
+      env:
+        JD_COOKIE: ${{ secrets.JD_COOKIE }}
+        PUSH_KEY: ${{ secrets.PUSH_KEY }}
+      run: |
+        npm install
+        node jd_fruit
+        node jd_pet
+        node jd_bookshop
+        node jd_jxnc

@@ -1,0 +1,54 @@
+Arguments: 
+  /usr/local/Cellar/node/12.3.1/bin/node /usr/local/bin/yarn
+
+PATH: 
+  /Users/colin/.rvm/gems/ruby-2.5.3/bin:/Users/colin/.rvm/gems/ruby-2.5.3@global/bin:/Users/colin/.rvm/rubies/ruby-2.5.3/bin:/Applications/CMake.app/Contents/bin/:/Users/colin/Downloads/flutter/bin:/Applications/Android Studio.app/Contents/jre/jdk/Contents/Home/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:.:/Users/colin/Library/Android/sdk/tools:/Users/colin/Library/Android/sdk/platform-tools:/Users/colin/Library/Android/sdk/build-tools/25.0.2:/Users/colin/.rvm/bin
+
+Yarn version: 
+  1.19.1
+
+Node version: 
+  12.3.1
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: getaddrinfo ENOTFOUND registry.npmjs.org
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:60:26)
+
+npm manifest: 
+  {
+    "name": "lxk0301",
+    "version": "1.0.0",
+    "description": "{**When you're done, you can delete the content in this README and update the file with details for others getting started with your repository**}",
+    "main": "AlipayManor.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/lxk0301/jd_scripts.git"
+    },
+    "keywords": [
+      "京东薅羊毛工具, 京东水果、宠物、种豆等等"
+    ],
+    "author": "lxk0301",
+    "license": "ISC",
+    "dependencies": {
+      "crypto-js": "^4.0.0",
+      "download": "^8.0.0",
+      "got": "^11.5.1",
+      "http-server": "^0.12.3",
+      "qrcode-terminal": "^0.12.0",
+      "request": "^2.88.2",
+      "tough-cookie": "^4.0.0",
+      "tunnel": "0.0.6"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

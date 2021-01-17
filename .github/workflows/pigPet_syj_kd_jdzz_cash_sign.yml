@@ -1,0 +1,33 @@
+name: #金融养猪 #十元街 #京东快递 #京东赚赚 #签到领现金 #京喜签到
+
+
+on:
+  push:
+  gollum:
+  schedule:
+  - cron: "3 1 * * *"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    # 使用 node:10
+    - name: use Node.js 10.x
+      uses: actions/setup-node@v1
+      with:
+        node-version: 10.x
+    # npm install
+    - name: "运行 #金融养猪 #十元街 #京东快递 #京东赚赚 #签到领现金 #京喜签到"
+      env:
+        JD_COOKIE: ${{ secrets.JD_COOKIE }}
+        PUSH_KEY: ${{ secrets.PUSH_KEY }}
+      run: |
+        npm install
+        node jd_pigPet
+        node jd_syj
+        node jd_kd
+        node jd_jdzz
+        node jd_cash
+        node jx_sign
